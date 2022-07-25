@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'coin_data.dart';
+import 'dart:io' show Platform;
 
 class PriceScreen extends StatefulWidget {
   const PriceScreen({super.key});
@@ -80,7 +81,7 @@ class _PriceScreenState extends State<PriceScreen> {
             alignment: Alignment.center,
             color: Colors.lightBlue,
             padding: const EdgeInsets.only(bottom: 30.0),
-            child: null,
+            child: Platform.isIOS ? iOSPicker() : AndriodDropDown(),
           )
         ],
       ),
