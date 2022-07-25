@@ -43,15 +43,21 @@ class _PriceScreenState extends State<PriceScreen> {
             color: Colors.lightBlue,
             padding: const EdgeInsets.only(bottom: 30.0),
             child: DropdownButton(
-              value: selectedCurrency,
+                value: selectedCurrency,
                 items: const [
-                  DropdownMenuItem<String>(child: Text('USD'), value:'USD',),
-                   DropdownMenuItem<String>(child: Text('EUR'), value:'EUR',),
-                    DropdownMenuItem<String>(child: Text('XAF'), value:'XAF',),
+                  DropdownMenuItem<String>(
+                    child: Text('USD'),
+                    value: 'USD',
+                  ),
+                  //for(int i=0; i<currenciesList.length-1; i++){
+                  // DropdownMenuItem<String>(
+                  // child: Text($i),
+                  // value: $i,
+                  // )}
                 ],
                 onChanged: (value) {
                   setState(() {
-                    selectedCurrency = value;
+                    selectedCurrency = value.toString();
                   });
                 }),
           )
