@@ -48,7 +48,7 @@ class _PriceScreenState extends State<PriceScreen> {
             color: Colors.lightBlue,
             padding: const EdgeInsets.only(bottom: 30.0),
             child: CupertinoPicker(
-                itemExtent: 50.0,
+                itemExtent: 32.0,
                 onSelectedItemChanged: (selectedIndex) {
                   print(selectedIndex);
                 },
