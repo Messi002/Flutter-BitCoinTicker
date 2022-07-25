@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 const List<String> currenciesList = [
   'AUD',
