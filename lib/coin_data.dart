@@ -1,7 +1,29 @@
-const List<String> crytoList = [
-  'BTC','ETH','LTC'
+import 'dart:html';
+
+const List<String> currenciesList = [
+  'AUD',
+  'BRL',
+  'CAD',
+  'CNY',
+  'EUR',
+  'GBP',
+  'HKD',
+  'IDR',
+  'ILS',
+  'INR',
+  'JPY',
+  'MXN',
+  'NOK',
+  'NZD',
+  'PLN',
+  'RON',
+  'RUB',
+  'SEK',
+  'SGD',
+  'USD',
+  'ZAR'
 ];
 
-class CoinData {
-  
-}
+const List<String> crytoList = ['BTC', 'ETH', 'LTC'];
+
+class CoinData {}
