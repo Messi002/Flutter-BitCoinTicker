@@ -24,7 +24,7 @@ class _PriceScreenState extends State<PriceScreen> {
         setState(
           () {
             selectedCurrency = value.toString();
-            print(value);
+           
           },
         );
       },
