@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'coin_data.dart';
 
 class PriceScreen extends StatefulWidget {
   const PriceScreen({super.key});
@@ -8,7 +10,10 @@ class PriceScreen extends StatefulWidget {
 }
 
 class _PriceScreenState extends State<PriceScreen> {
-  String selectedCurrency = 'USD';
+  String selectedCurrency = 'AUD';
+
+  Dropdown dropDown = Dropdown();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,27 +47,32 @@ class _PriceScreenState extends State<PriceScreen> {
             alignment: Alignment.center,
             color: Colors.lightBlue,
             padding: const EdgeInsets.only(bottom: 30.0),
-            child: DropdownButton(
-                value: selectedCurrency,
-                items: const [
-                  DropdownMenuItem<String>(
-                    child: Text('USD'),
-                    value: 'USD',
-                  ),
-                  //for(int i=0; i<currenciesList.length-1; i++){
-                  // DropdownMenuItem<String>(
-                  // child: Text($i),
-                  // value: $i,
-                  // )}
-                ],
-                onChanged: (value) {
-                  setState(() {
-                    selectedCurrency = value.toString();
-                  });
-                }),
+            child: CupertinoPicker(
+                itemExtent: 50.0,
+                onSelectedItemChanged: (selectedIndex) {
+                  print(selectedIndex);
+                },
+                children: [
+                  Text('USD'),
+                  Text('EUR'),
+                  Text('XAF'),
+                  Text('FRANC'),
+                ]),
           )
         ],
       ),
     );
   }
 }
+
+
+// DropdownButton<dynamic>(
+//                 menuMaxHeight: 300.0,
+//                 value: selectedCurrency,
+//                 items: dropDown.getCurrencyList(),
+//                 onChanged: (value) {
+//                   setState(() {
+//                     selectedCurrency = value.toString();
+//                     print(value);
+//                   });
+//                 })
