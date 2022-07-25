@@ -14,6 +14,39 @@ class _PriceScreenState extends State<PriceScreen> {
 
   Dropdown dropDown = Dropdown();
 
+  DropdownButton<dynamic> AndriodDropDown() {
+    return DropdownButton<dynamic>(
+      menuMaxHeight: 300.0,
+      value: selectedCurrency,
+      items: dropDown.getCurrencyList(),
+      onChanged: (value) {
+        setState(
+          () {
+            selectedCurrency = value.toString();
+            print(value);
+          },
+        );
+      },
+    );
+  }
+
+  CupertinoPicker iOSPicker() {
+ List<Text> cupertinoText = [];
+    for (var element in kcurrenciesList) {
+      var newText = Text(element);
+      cupertinoText.add(newText);
+    }
+
+    return CupertinoPicker(
+      itemExtent: 32.0,
+      onSelectedItemChanged: (selectedIndex) {
+        print(selectedIndex);
+      },
+      children: cupertinoText,
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,32 +80,10 @@ class _PriceScreenState extends State<PriceScreen> {
             alignment: Alignment.center,
             color: Colors.lightBlue,
             padding: const EdgeInsets.only(bottom: 30.0),
-            child: CupertinoPicker(
-                itemExtent: 32.0,
-                onSelectedItemChanged: (selectedIndex) {
-                  print(selectedIndex);
-                },
-                children: [
-                  Text('USD'),
-                  Text('EUR'),
-                  Text('XAF'),
-                  Text('FRANC'),
-                ]),
+            child: null,
           )
         ],
       ),
     );
   }
 }
-
-
-// DropdownButton<dynamic>(
-//                 menuMaxHeight: 300.0,
-//                 value: selectedCurrency,
-//                 items: dropDown.getCurrencyList(),
-//                 onChanged: (value) {
-//                   setState(() {
-//                     selectedCurrency = value.toString();
-//                     print(value);
-//                   });
-//                 })
