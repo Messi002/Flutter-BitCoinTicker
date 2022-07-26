@@ -43,18 +43,7 @@ class CoinData {}
 
 class Dropdown {
   List<DropdownMenuItem> getCurrencyList() {
-    List<DropdownMenuItem<String>> DropdownItems = [];
-    for (int i = 0; i < kcurrenciesList.length; i++) {
-      String currency = kcurrenciesList[i];
-      var New = DropdownMenuItem(
-        child: Text(currency),
-        value: currency,
-      );
-      DropdownItems.add(New);
-    }
-    return DropdownItems;
-  }
-
+    List<
 
 
   
@@ -68,3 +57,14 @@ class Dropdown {
       print('You have $winNum matching numbers');
 
 }
+DropdownMenuItem<String>> DropdownItems = [];
+    for (int i = 0; i < kcurrenciesList.length; i++) {
+      String currency = kcurrenciesList[i];
+      var New = DropdownMenuItem(
+        child: Text(currency),
+        value: currency,
+      );
+      DropdownItems.add(New);
+    }
+    return DropdownItems;
+  }
