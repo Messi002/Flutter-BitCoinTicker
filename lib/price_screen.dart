@@ -95,31 +95,3 @@ class _PriceScreenState extends State<PriceScreen> {
 
 
 
-oid main(List<String> args) {
-  List<int> ticket1 = [45, 2, 9, 18, 12, 33];
-  List<int> ticket2 = [41, 17, 26, 32, 7, 35];
-
-    checkNumbers(ticket1);
-  checkNumbers(ticket2);
-}
-
-void checkNumbers(List<int> myNumbers) {
-  int winNum = 0;
-  for (int element in myNumbers) {
-    for (int num in winningNumbers) {
-      if (element == num) {
-
-
-        ld: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 28.0),
-                child: Text(
-                  '1 BTC = ? USD',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Container(
